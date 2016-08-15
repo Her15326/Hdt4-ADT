@@ -13,30 +13,28 @@ public class Calculadora implements I_Calculadora{
 	private Stack miPila;
 	private String operaciones;
 	
-	public Calculadora(){
+	public Calculadora()
+	{
 		this.miPila = new Stack();
-		//*this.operaciones = "2 2 + 3 * ";
-		
+		//*this.operaciones = "2 2 + 3 * ";	
 	}
 	
-	
 	/**
-	 * Este metodo se encarga de leer un string e identidicar los numeros y operaciones, para hacer uso de la pila y retornar 
-	 * el resultado de la operacion
-	 * @param String Recibe el string de la instruccion a realizar
-	 * @return int regresa el resutlado de la operaciones
+	 *metodo para calcular resultados a partir de un vector
 	 */
-	public int calcular(String vector) {
-		for(int posicion=0;posicion<vector.length();posicion++)
+	 
+	public int calcularVector ([] String vector) {
+		for(int posicion=0;posicion<vector.length;posicion++)
 		{
-			String caracter=vector.substring(posicion,posicion+1);
-			if (caracter.equals("0") || caracter.equals("1") || caracter.equals("2") || caracter.equals("3") ||caracter.equals("4") || caracter.equals("5") || caracter.equals("6") ||caracter.equals("7") || caracter.equals("8") || caracter.equals("9"))
+			int element= vector[posicion];
+			if ((element.equals("0")) || (element.equals("1")) || (element.equals("2")) || (element.equals("3")) || (element.equals("4")) || (element.equals("5")) || (element.equals("6")) || (element.equals("7")) || (element.equals("8")) || (element.equals("9")))
 					{
-					int intcaracter = Integer.parseInt(caracter);
-					miPila.push(intcaracter);
-					/**System.out.println("Numero");*/
+						
+					int intcaracter = Integer.parseInt(element);
+					miPila.push(intcaracter);	
+
 					}
-				if (caracter.equals("*") )
+				if (element.equals("*"))
 					{
 					int numero1= (int)miPila.pop();
 					int numero2= (int)miPila.pop();
@@ -67,12 +65,16 @@ public class Calculadora implements I_Calculadora{
 					int intresultado=(numero1-numero2);
 					miPila.push(intresultado);
 					}	
-			
 		}
 		int resultado = (int)miPila.pop();
 		return 	resultado;
-		
 	}
+	
+	
+	
+	
+	
+	
 
 	/**
 	 * Este metodo se encarga de leer un archivo de texto y almacenar en un string su contenido
