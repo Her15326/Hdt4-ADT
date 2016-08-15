@@ -1,10 +1,10 @@
 
-/**
-*Calculadora, Esta se encarga de realizar los calculos para mostar el resultado del .txt con las instrucciones
-*@version: 2.0
-*@author: Robbin Woods 15201, Steven Rubio 15044, Erick Bautista 15192
-*@since 2016-07-24
-*/
+//##################################
+	//Universiad del Valle de Guatemala
+	//Algorirmos y Estructura de Datos
+	//Erick Bautista 15192
+	//Brandon Hernandez 15326
+	//##################################
 
 import java.io.*;
 
@@ -23,10 +23,10 @@ public class Calculadora implements I_Calculadora{
 	 *metodo para calcular resultados a partir de un vector
 	 */
 	 
-	public int calcularVector ([] String vector) {
+	public int calcularVector (object []vector) {
 		for(int posicion=0;posicion<vector.length;posicion++)
 		{
-			int element= vector[posicion];
+			String element= vector[posicion];
 			if ((element.equals("0")) || (element.equals("1")) || (element.equals("2")) || (element.equals("3")) || (element.equals("4")) || (element.equals("5")) || (element.equals("6")) || (element.equals("7")) || (element.equals("8")) || (element.equals("9")))
 					{
 						
@@ -42,7 +42,7 @@ public class Calculadora implements I_Calculadora{
 					miPila.push(intresultado);
 					}
 					
-				if (caracter.equals("/") )
+				if (element.equals("/") )
 					{
 					int numero1=(int)miPila.pop();
 					int numero2=(int)miPila.pop();
@@ -50,7 +50,7 @@ public class Calculadora implements I_Calculadora{
 					miPila.push(intresultado);
 					}
 				
-				if (caracter.equals("+") )
+				if (elements.equals("+") )
 					{
 					int numero1=(int)miPila.pop();
 					int numero2=(int)miPila.pop();
@@ -58,7 +58,7 @@ public class Calculadora implements I_Calculadora{
 					miPila.push(intresultado);
 					}
 					
-				if (caracter.equals("-") )
+				if (elements.equals("-") )
 					{
 					int numero1=(int)miPila.pop();
 					int numero2=(int)miPila.pop();
@@ -69,6 +69,14 @@ public class Calculadora implements I_Calculadora{
 		int resultado = (int)miPila.pop();
 		return 	resultado;
 	}
+	
+	/**
+	*metodo para calcular apartir de un arraylist
+	*/
+	
+	/**
+	*metodo para calcular apartir de un listas
+	*/
 	
 	
 	
