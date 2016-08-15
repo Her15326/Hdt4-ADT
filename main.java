@@ -18,7 +18,8 @@ public class main {
  */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		Object objeto = new Object();
+		Factory factory = new Factory();
 		Scanner usuario = new Scanner(System.in);
 		String direccion;
 		direccion="";
@@ -82,6 +83,7 @@ public class main {
 			//String direccion = "ejemplo.txt";
 		
 			String instrucciones = calculadoraPrubea.leerArchivo(direccion);
+			objeto = factory.tipoLista(seleccion1, seleccion2, instrucciones);
 			System.out.println(instrucciones);
 			int resultado = calculadoraPrubea.calcular(instrucciones);
 			System.out.println("El resultado de la operacion es : "+resultado);
