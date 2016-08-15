@@ -1,9 +1,9 @@
-/**
-*main-ejecuta el programa utilizando la clase calculadora y sus respectivas interfaces
-*@version: 3.0
-*@author: Robbin Woods 15201, Steven Rubio 15044, Erick Bautista 15192
-*@since 2016-07-24
-*/
+//##################################
+	//Universiad del Valle de Guatemala
+	//Algorirmos y Estructura de Datos
+	//Erick Bautista 15192
+	//Brandon Hernandez 15326
+	//##################################
 
 /**
  * libreria para solicitud de datos a usuario
@@ -17,7 +17,8 @@ public class main {
  * se declara el main par ajecutar codigo en consola
  */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		// objetos del main para trabajar en la interface con el usuario
 		Object objeto = new Object();
 		Factory factory = new Factory();
 		Scanner usuario = new Scanner(System.in);
@@ -28,6 +29,8 @@ public class main {
 		String seleccion2;
 		seleccion2="";
 		int secure;
+		int resultado;
+		resultado=0;
 		
 		
 		System.out.println("\n      ###########################################################");
@@ -47,6 +50,8 @@ public class main {
 		try
 		{
 			secure=0;
+			
+			//ciclo (con programacion defensiva) para determinar la forma de trabajar por parte del usuario
 			while (secure==0)
 			{
 				System.out.println("Que implementacion desea para el stack:\n    1)arrayList\n    2)vector\n    3)lista\n");
@@ -75,18 +80,42 @@ public class main {
 					System.out.println("\n   Has ingresado un valor incorrecto, vuelve a intentarlo...\n");
 				}
 			}
+			
 			//solicitud de nombre de archivo
 			System.out.println("Ingrese el nombre del archivo que contiene la operacion (incluir el .txt)\n recuerde que debe trabaja con valores int por lo cual\n este programa no trabaja valores con decimales\n");
 			direccion= usuario.next();
 			
+			//se crea objeto tipo calculadora
 			Calculadora calculadoraPrubea = new Calculadora();
-			//String direccion = "ejemplo.txt";
-		
+			
+			//se almacena en el String intrucciones en el string intrucciones
 			String instrucciones = calculadoraPrubea.leerArchivo(direccion);
-			objeto = factory.tipoLista(seleccion1, seleccion2, instrucciones);
+			
+			//se imprimen las intrucciones en pantalla
 			System.out.println(instrucciones);
-			int resultado = calculadoraPrubea.calcular(instrucciones);
-			System.out.println("El resultado de la operacion es : "+resultado);
+			
+			//se almacenan las intrucciones en el formato seleccionado por el usuario en el object llamado objeto
+			objeto = factory.tipoLista(seleccion1, seleccion2, instrucciones);
+			
+			//realizar operacion si se lecciono metodo de arrayList
+			if (seleccion1.equals("1"))
+			{
+			//int resultado=calculadoraPrubea.calcularArrayList(objeto);
+			}
+			
+			//realizar operacion si se lecciono metodo de vector
+			if (seleccion1.equals("2"))
+			{
+				resultado=calculadoraPrubea.calcularVector(objeto);
+			}
+			
+			//realizar operacion si se lecciono metodo de listas
+			if (seleccion1.equals("3"))
+			{
+			//NAC
+			}
+			//int resultado = calculadoraPrubea.calcular(instrucciones);
+			System.out.println("El resultado de la operacion es : " + resultado);
 		}
 		
 		
