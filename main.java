@@ -19,7 +19,7 @@ public class main {
 	public static void main(String[] args) {
 		
 		// objetos del main para trabajar en la interface con el usuario
-		Object objeto = new Object();
+		
 		Factory factory = new Factory();
 		Scanner usuario = new Scanner(System.in);
 		String direccion;
@@ -100,16 +100,19 @@ public class main {
 			//realizar operacion si se lecciono metodo de arrayList
 			if (seleccion1.equals("1"))
 			{
-			//objeto = factory.tipoLista(seleccion1, seleccion2, instrucciones);
+			ArrayList<String> objecto=new ArrayList<String>();
+			
+			//objeto = factory.tipoLista2(seleccion1, seleccion2, instrucciones);
 			//int resultado=calculadoraPrubea.calcularArrayList(objeto);
 			}
 			
 			//realizar operacion si se lecciono metodo de vector
 			if (seleccion1.equals("2"))
 			{
+				Object [] objeto = new Object[20];
 				objeto = factory.tipoLista(seleccion1, seleccion2, instrucciones);
-				String [] ob= objeto.toString();
-				resultado=calculadoraPrubea.calcularVector(ob);
+				
+				resultado=calculadoraPrubea.calcularVector(objeto);
 				
 			}
 			
