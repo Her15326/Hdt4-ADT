@@ -95,18 +95,22 @@ public class main {
 			System.out.println(instrucciones);
 			
 			//se almacenan las intrucciones en el formato seleccionado por el usuario en el object llamado objeto
-			objeto = factory.tipoLista(seleccion1, seleccion2, instrucciones);
+			//objeto = factory.tipoLista(seleccion1, seleccion2, instrucciones);
 			
 			//realizar operacion si se lecciono metodo de arrayList
 			if (seleccion1.equals("1"))
 			{
+			//objeto = factory.tipoLista(seleccion1, seleccion2, instrucciones);
 			//int resultado=calculadoraPrubea.calcularArrayList(objeto);
 			}
 			
 			//realizar operacion si se lecciono metodo de vector
 			if (seleccion1.equals("2"))
 			{
-				resultado=calculadoraPrubea.calcularVector(objeto);
+				objeto = factory.tipoLista(seleccion1, seleccion2, instrucciones);
+				String [] ob= objeto.toString();
+				resultado=calculadoraPrubea.calcularVector(ob);
+				
 			}
 			
 			//realizar operacion si se lecciono metodo de listas
