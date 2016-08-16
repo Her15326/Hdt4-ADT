@@ -11,22 +11,6 @@
 		//public Object 
 		public Object []  tipoLista(String implementacionDeStack, String metodoDeStack, String instrucciones)
 		{
-			
-			//condicion para crear arrayList de instrucciones
-			if(implementacionDeStack.equals("1"))
-			{
-				ArrayList listaAL = new ArrayList();
-				
-				
-				for(int posicion=0;posicion<instrucciones.length();posicion++)
-				{
-					//nuestro array es de string
-					String caracter=instrucciones.substring(posicion,posicion+1);
-					listaAL.add(posicion,caracter);
-				}	
-				//return listaAL;
-				
-			}
 			//condicion para crear vector de instrucciones
 			if(implementacionDeStack.equals("2"))
 			{
@@ -41,23 +25,27 @@
 				
 				return listaS;
 			}
-			
-			//condicion para crear lista de istrucciones
-			if(implementacionDeStack.equals("3"))
-			{
-				if(metodoDeStack.equals("1"))
-				{
-					
-				}
-				if(metodoDeStack.equals("2"))
-				{
-					
-				}
-				if(metodoDeStack.equals("3"))
-				{
-					
-				}
-			}
 			return null;
 		}
+		
+		//condicion para crear arrayList de instrucciones
+		public ArrayList<Object> tipoLista2(String implementacionDeStack, String metodoDeStack, String instrucciones)
+		{
+			if(implementacionDeStack.equals("1"))
+			{
+				ArrayList<Object> listaAL = new ArrayList<Object>();
+				
+				for(int posicion=0;posicion<instrucciones.length();posicion++)
+				{
+					//nuestro array es de string
+					String caracter=instrucciones.substring(posicion,posicion+1);
+					listaAL.add(posicion,caracter);
+				}	
+				return listaAL;
+			}
+			
+		}
+	
+	
+	
 	}
