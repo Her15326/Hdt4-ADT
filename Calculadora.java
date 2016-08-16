@@ -24,13 +24,14 @@ public class Calculadora implements I_Calculadora{
 	 */
 	 
 	public int calcularVector (Object  [] vectores) {
-		String [] vector=new [vectores.length]String;
+		String [] vector=new String [vectores.length];
 		String e;
 		e="";
 		
 		for (int conteo=0; conteo<vectores.length;conteo++)
 		{
-			e=toString(vectores [conteo]);
+			e=(String)vectores[conteo];
+			//e=toString(vectores [conteo]);
 			vector[conteo]=e;
 		}
 		
@@ -83,6 +84,78 @@ public class Calculadora implements I_Calculadora{
 	/**
 	*metodo para calcular apartir de un arraylist
 	*/
+	
+	public int calcularVector (ArrayList <String> vectores) {
+		String [] vector=new String [vectores.length];
+		String e;
+		e="";
+		
+		for (int conteo=0; conteo<vectores.length;conteo++)
+		{
+			e=(String)vectores[conteo];
+			//e=toString(vectores [conteo]);
+			vector[conteo]=e;
+		}
+		
+		for(int posicion=0;posicion<vector.length;posicion++)
+		{
+			String element= vector[posicion];
+			if ((element.equals("0")) || (element.equals("1")) || (element.equals("2")) || (element.equals("3")) || (element.equals("4")) || (element.equals("5")) || (element.equals("6")) || (element.equals("7")) || (element.equals("8")) || (element.equals("9")))
+					{
+						
+					int intcaracter = Integer.parseInt(element);
+					miPila.push(intcaracter);	
+
+					}
+				if (element.equals("*"))
+					{
+					int numero1= (int)miPila.pop();
+					int numero2= (int)miPila.pop();
+					int intresultado=(numero1*numero2);
+					miPila.push(intresultado);
+					}
+					
+				if (element.equals("/") )
+					{
+					int numero1=(int)miPila.pop();
+					int numero2=(int)miPila.pop();
+					int intresultado=(numero1/numero2);
+					miPila.push(intresultado);
+					}
+				
+				if (element.equals("+") )
+					{
+					int numero1=(int)miPila.pop();
+					int numero2=(int)miPila.pop();
+					int intresultado=(numero1+numero2);
+					miPila.push(intresultado);
+					}
+					
+				if (element.equals("-") )
+					{
+					int numero1=(int)miPila.pop();
+					int numero2=(int)miPila.pop();
+					int intresultado=(numero1-numero2);
+					miPila.push(intresultado);
+					}	
+		}
+		int resultado = (int)miPila.pop();
+		return 	resultado;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	/**
 	*metodo para calcular apartir de un listas
