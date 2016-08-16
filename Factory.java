@@ -5,9 +5,12 @@
 	//Brandon Hernandez 15326
 	//##################################
 
-	import java.util.ArrayList;
+	import java.util.*;
 	public class Factory <E> {
-		public Object tipoLista(String implementacionDeStack, String metodoDeStack, String instrucciones){
+		
+		//public Object 
+		public Object []  tipoLista(String implementacionDeStack, String metodoDeStack, String instrucciones)
+		{
 			
 			//condicion para crear arrayList de instrucciones
 			if(implementacionDeStack.equals("1"))
@@ -21,7 +24,7 @@
 					String caracter=instrucciones.substring(posicion,posicion+1);
 					listaAL.add(posicion,caracter);
 				}	
-				
+				//return listaAL;
 				
 			}
 			//condicion para crear vector de instrucciones
@@ -35,6 +38,8 @@
 					String caracter=instrucciones.substring(posicion,posicion+1);
 					listaS[posicion]=caracter;				
 				}	
+				
+				return listaS;
 			}
 			
 			//condicion para crear lista de istrucciones
