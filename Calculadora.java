@@ -23,7 +23,17 @@ public class Calculadora implements I_Calculadora{
 	 *metodo para calcular resultados a partir de un vector
 	 */
 	 
-	public int calcularVector (object []vector) {
+	public int calcularVector (Object  [] vectores) {
+		String [] vector=new [vectores.length]String;
+		String e;
+		e="";
+		
+		for (int conteo=0; conteo<vectores.length;conteo++)
+		{
+			e=toString(vectores [conteo]);
+			vector[conteo]=e;
+		}
+		
 		for(int posicion=0;posicion<vector.length;posicion++)
 		{
 			String element= vector[posicion];
@@ -50,7 +60,7 @@ public class Calculadora implements I_Calculadora{
 					miPila.push(intresultado);
 					}
 				
-				if (elements.equals("+") )
+				if (element.equals("+") )
 					{
 					int numero1=(int)miPila.pop();
 					int numero2=(int)miPila.pop();
@@ -58,7 +68,7 @@ public class Calculadora implements I_Calculadora{
 					miPila.push(intresultado);
 					}
 					
-				if (elements.equals("-") )
+				if (element.equals("-") )
 					{
 					int numero1=(int)miPila.pop();
 					int numero2=(int)miPila.pop();
